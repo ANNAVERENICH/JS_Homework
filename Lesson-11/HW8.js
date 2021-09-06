@@ -1,11 +1,12 @@
 
 //Задание 1
+
 function filterNumbersArr(numbers) {
     var newArr = [];
     var el = numbers;
 
-    var newArr = el.map(function (numbers) {
-        return numbers.length;
+    var newArr = el.filter(function (numbers) {
+        return numbers >= 0;
     });
 
     return newArr;
@@ -19,20 +20,19 @@ function getFirst(number) {
     var arrNew = [];
     var numbers = number;
 
-    var arrNew = numbers.filter(function (number) {
+    var arrNew = numbers.find(function (number) {
         return number >= 0;
     });
 
     return arrNew;
 }
 
-getFirst([-1, 0, 2, 34, -2, 7, 3, 5]);
+getFirst([-1, 2, 34, -2, 7, 3, 5]);
 
 
 //Задание 3
 function isPalindrome(word) {
-    var word = word.toLowerCase();
-    return word == word.split('').reverse().join('');
+    return word.split('').reverse().join('').toLowerCase() == word.toLowerCase();
 }
 
 isPalindrome('шалаш');
@@ -42,10 +42,7 @@ isPalindrome('привет');
 //Задание 4
 
 function areAnagrams(w1, w2) {
-    var w1 = w1.toLowerCase();
-    var w2 = w2.toLowerCase();
-
-    return w1.split('').sort().join('') === w2.split('').sort().join('');
+    return w1.toLowerCase().split('').sort().join('') === w2.toLowerCase().split('').sort().join('');
 }
 
 areAnagrams('кот', 'отк');
